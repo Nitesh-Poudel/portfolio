@@ -20,12 +20,14 @@
 }
 
 
+.intro{width:600px;margin: 0px 20px;}
+
 .projects .project-item{
     display: flex;
-    /* flex-wrap: wrap; */
+    /* flex-wrap: wrap;  */
     /* width:95%; */
     justify-content: center;
-   
+    
    
    /* background-color: rgb(240, 241, 233); */
    border-radius: 20px;
@@ -34,7 +36,7 @@
    margin-top: 100px;
 }
 .projects .project-item img{
-    height:590px;
+    /* height:590px; */
     width: 400px;
     border-radius: 8px;
     /* border:3px solid rgb(124, 127, 104); */

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/hovers.css">
     <link rel="stylesheet" href="css/projects.css">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
     <link rel="icon" href="Images/logo.png">
 </head>
@@ -20,7 +21,8 @@
                 <div class="top-text">
                     <h1>Nitesh Poudel</h1>
                     
-                    <p><b>A Passionate Learner & a web developer.</b></p>
+                    
+                       <p>A Passionate Learner & <span class="auto-type"></span></p><br>
                     <p><a href="mailto:ntspoudel@gmail.com">✉️:ntspoudel@gmail.com</a></p>
                     
 
@@ -106,18 +108,21 @@
              </div>
 
             
-             <h1 style="margin-top: 150px;">Projects</h1>
+            
         </div>
 
     </div>
 
     
     <div class="projects">
+ 
         <div class="projects" id="projects">
           
             <div class="project-item">
                 <div class="img">
-                    <img src="images/news.jpg">
+                    <img src="images/news.png">
+                    <img src="images/news.png">
+                  
                 </div>
                     
                 <div class="intro">
@@ -136,16 +141,17 @@
                     
                 <div class="intro">
                     
-                    <div class="title"><h2>Chat Application<br></h2>  </div><br>
+                    <div class="title"><h2>Blog Application<br></h2>  </div><br>
                     
-                    <p>Chat applications are digital platforms that enable users to exchange messages and communicate with one another in real-time. These applications are designed to be user-friendly, allowing for easy navigation and clear messaging. To enhance the user experience, chat applications can offer customization options, integrate chatbots, and implement end-to-end encryption to ensure user privacy and security. Some unique features that can be added to chat applications include augmented reality chat, voice-based chat, personalized chat, group brainstorming, and real-time translation. These features can help improve engagement, collaboration, and communication between users, making chat applications a valuable tool for personal and business use.
-    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate vel modi mollitia, sapiente, veritatis id ex dolorem, molestias perferendis officiis enim quia? Earum debitis ipsa eum et ducimus dolor nam?</p>
                         Learn more........
     
                         <p id="seemore">Learn more........</p></p>
                 </div>
                 <div class="img">
-                    <img src="images/chat.jpg">
+                    <img src="images/blog.png">
+			<img src="images/blog2.png">
+
                 </div>
     
                 
@@ -176,5 +182,15 @@
     
     </div>
     
+
+    <script>
+        var typed = new Typed(".auto-type",{
+    strings : ["Web Developer", "Designer"],
+    typeSpeed : 150,
+    backSpeed : 150,
+    loop : true
+});     
+                    
+    </script>
 </body>
 </html>
