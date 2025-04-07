@@ -1,5 +1,47 @@
-strong{  display: inline-block;margin:10px 0px 0px 0px!important;}
-.project img{max-width:100%;flex-grow:1; margin:5px 0px}
-.project-ui{border:' '; max-height:100%}
-
-details{border:}
+/* Global Cleanup */
+strong {
+    display: inline-block;
+    margin: 10px 0 0 0 !important;
+  }
+  
+  .project img {
+    max-width: 100%;
+    height: auto;
+    flex-grow: 1;
+    margin: 5px 0;
+    border-radius: 8px;
+  }
+  
+  .project-ui {
+    max-height: 100%;
+    overflow: auto;
+  }
+  
+  details {
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 1rem;
+    background-color: #222;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Responsive Project Container */
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  /* Children in the flex container */
+  .project-feature, .project-ui {
+    flex: 1 1 100%; /* Default: take full width on small screens */
+    min-width: 300px;
+  }
+  
+  /* For large screens: display side by side */
+  @media (min-width: 768px) {
+    .project-feature, .project-ui {
+      flex: 1 1 48%;
+    }
+  }
+  

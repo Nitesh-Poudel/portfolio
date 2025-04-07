@@ -16,7 +16,16 @@ body{
 
 img{max-width: 100%;max-height:100%}
 .toolAndlanguage img{padding:10px}
-.skill .bg-secondary{width:150px!important; height:150px!;display:flex;justify-content: center; align-items: center;flex-grow: 1;}
+
+.skill .bg-secondary {
+    width: clamp(100px, 20vw, 180px);
+    height: clamp(100px, 20vw, 180px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
 .pp{
    
     width: clamp(300px, 20vw, 400px);
