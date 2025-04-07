@@ -1,5 +1,5 @@
 strong{  display: inline-block;margin:10px 0px 0px 0px!important;}
-.project img{max-width:500px;flex-grow:1; margin:5px 0px}
+.project img{max-width:100%;flex-grow:1; margin:5px 0px}
 .project-ui{border:' '; max-height:100%}
 
 details{border:}

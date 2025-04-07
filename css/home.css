@@ -6,22 +6,29 @@ body{
 /* .container{width:80vw!important;} */
 
 
-.heading{font-size:22px;font-weight:600;color:rgb(245, 246, 254);font-family:'Courier New', Courier, monospace;}
-
+.heading {font-size: 22px;font-weight:600;color:rgb(245, 246, 254);font-family:'Courier New', Courier, monospace;}
+/* .top div{border:1px solid red} */
+.heading.name {
+    font-size: clamp(12px, 10vw, 42px);
+    border: 1px solid yellocmcw !important;
+  }
+  
 
 img{max-width: 100%;max-height:100%}
 .toolAndlanguage img{padding:10px}
 .skill .bg-secondary{width:150px!important; height:150px!;display:flex;justify-content: center; align-items: center;flex-grow: 1;}
 .pp{
    
-    width:300px;
-    height:300px;
+    width: clamp(300px, 20vw, 400px);
+
+    aspect-ratio: 1 / 1; 
+
     overflow: hidden;
     border-radius: 50%;
     overflow: hidden;
 }
 .pp  img{
-  width:250px;
+  width:100%;
 
     border: 3px solid rgb(2, 2, 2); 
     filter:grayscale(66);
@@ -31,7 +38,7 @@ img{max-width: 100%;max-height:100%}
 .top-text{
     width:400px;
     height:200px;
-    margin-left: 40px;
+    /* margin-left: 40px; */
   
     vborder: 3px solid rgb(81, 255, 0);
     font-family:'Courier New', Courier, monospace;
@@ -52,15 +59,11 @@ img{max-width: 100%;max-height:100%}
 
 }
 
-.top2{
-    display: flex;
-    justify-content: center;
 
-}
 .top2 a{
     color:white;
-    padding:10px 5px;
-    margin:0px 20px;
+    /* padding-right:5px; */
+    margin-right:0px 20px;
     text-decoration: none;
 }
 
@@ -72,9 +75,7 @@ img{max-width: 100%;max-height:100%}
     margin-top: 30px;
 }
 
-.icons-main{
-    justify-content: space-between;
-}
+
 
 .icons-main img{
     width:30px; margin:3px 5px;
