@@ -113,4 +113,16 @@ img{max-width: 100%;max-height:100%}
 .academic table{width:100%;border:1px solid white;border-radius: 8px;}
 
 
+
+/* Gallery section */
 .hobby img, .four-images img{max-height: 150px; max-width:200px}
+#gallery img{transition: 1s; filter:blur(0); filter: none; border:none}
+#gallery img:hover{scale:1.01; transition: 1s;}
+#gallery p{font-weight: 700}
+#gallery img :hover .bg-opacity-50{;}
+/* Apply blur to all images by default */
+/* #gallery img:not(:hover) {
+    filter: blur(1px);
+    border: 3px solid red;
+} */
+
