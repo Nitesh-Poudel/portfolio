@@ -43,19 +43,21 @@
                         </div>
                 </div>
                 <nav class="  position-absolute " style="bottom: 0; right:0">
-                    <div class="d-flex justify-content-around gap-5">
-                        <a href="#home" id="home" style="color: white; padding: 10px;">Home</a>
-                        <a href="#skills" id="skills" style="color: white; padding: 10px;">Skills</a>
-                        <a href="#academics" id="academics" style="color: white; padding: 10px;">Academics</a>
-                        <a href="#gallery" id="gallery" style="color: white; padding: 10px;">Gallery</a>
+                    <div class="d-flex w-100 justify-content-around gap-3 ">
+                        <a href="#home" class="text-white py-2">Home</a>
+                        <a href="#skills" class="text-white py-2">Skills</a>
+                        <a href="#academics" class="text-white py-2">Academics</a>
+                        <a href="#gallery" class="text-white py-2">Gallery</a>
+                        <a href="#contact" class="text-white py-2">Contact</a>
                     </div>
+                    
                 </nav>
             </div>
         </div>
 
 
         <div class="shadow rounded">
-            <div class="py-5 w-75 m-auto toolAndlanguage ">
+            <div class="py-5 col-lg-9 m-auto toolAndlanguage ">
                 <h1 class="text-white text-center" style="color: gold !important;">Who Am I?</h1><br>
                 <p class="text-white text-center">I am a Web Developer passionate about building scalable and user-friendly web applications. With experience in Laravel, Vue.js, and API development, I specialize in creating dynamic and efficient web solutions. Constantly learning and improving, I strive to develop high-performance applications that solve real-world problems.</p>
                 <div class="d-flex justify-content-center" style="cursor: pointer;">
@@ -503,7 +505,7 @@
             <div class="row text-center text-md-start flex-wrap">
                 <!-- Contact Info -->
                 <div class="col-md-4 mb-4">
-                    <h5 class="text-uppercase fw-bold">Contact</h5>
+                    <h5 class="text-uppercase fw-bold" id="contact">Contact</h5>
                     <p><i class="bi bi-envelope-fill me-2"></i> ntspoudel@gmail.com</p>
                     <p><i class="bi bi-geo-alt-fill me-2"></i> Kathmandu, Nepal</p>
                     <p><i class="bi bi-phone-fill me-2"></i> +977-9800000000</p>
@@ -547,12 +549,11 @@
 
     <script>
         var typed = new Typed(".auto-type",{
-        strings : ["","A Passionate Learner And Web Developer"],
-        typeSpeed : 55,
-        backSpeed : 15,
-        loop : true
-    });     
-                    
+            strings : ["","A Passionate Developer & Lifelong Learner", "Focused on Creating Meaningful Solutions", "Constantly Evolving in Technology and Growth"],
+            typeSpeed : 55,
+            backSpeed : 15,
+            loop : true
+        });     
     </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
