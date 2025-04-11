@@ -1,17 +1,19 @@
 @media (max-width: 414px) {
-   div{border:1px solid red!important}
+   /* div{border:1px solid red!important} */
    .pp {
-    width: 150px !important;
+    width: 220px !important;
     min-width: 150px !important;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
   }
-   .pp img{max-width: 150px;}
+   .pp img{max-width: 220px;}
 
 
    .heading.name {
     font-size: 50px !important;
     line-height: 1 !important; /* optional: adjust line spacing */
   }
+
+  nav a{font-size: 12px!important;font-weight: 700;}
 
   .toolAndlanguage{width: 100%!important; brder:1px solid blue!important};
 }
