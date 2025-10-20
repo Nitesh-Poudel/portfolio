@@ -1,8 +1,8 @@
     .timeline-section {
             padding: 40px 0;
             /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
-            background-color:#171a1d;
-            border:1px solid #212529;
+            background-color:#252424;
+            border:0.5px solid #4e4d4dd3;
         }
 
         .timeline-heading {
@@ -27,7 +27,7 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            /* gap: 20px; */
         }
 
         .timeline-path::before {
