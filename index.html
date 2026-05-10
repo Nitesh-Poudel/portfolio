@@ -3,567 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NiteshJi</title>
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/hovers.css">
-    <link rel="stylesheet" href="css/projects.css">
-    <link rel="stylesheet" href="css/mobileBased.css">
-        <link rel="stylesheet" href="css/timeline.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Nitesh Poudel | Fullstack Developer</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <link rel="icon" href="Images/logo.png">
-
+    
     <style>
-        html {
-  scroll-behavior: smooth;
-}
+        :root {
+            --primary-bg: #0f172a;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --accent-gold: #fbbf24;
+            --text-main: #f8fafc;
+        }
 
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+        }
+
+        /* Glassmorphism utility */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border: 1px solid var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding-top: 100px;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-img-container {
+            width: 280px;
+            height: 280px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            overflow: hidden;
+            border: 4px solid var(--accent-gold);
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.3);
+            animation: morph 8s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+            0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Navbar */
+        .custom-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link {
+            color: var(--text-main) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-gold);
+            transition: 0.3s;
+        }
+
+        .nav-link:hover::after { width: 100%; }
+
+        /* Skills/Icons */
+        .skill-icon {
+            width: 120px;
+            height: 120px;
+            padding: 10px;
+            background: white;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skill-icon:hover { transform: scale(1.1) rotate(5deg); }
+
+        /* Timeline */
+        .timeline-item {
+            border-left: 2px solid var(--accent-gold);
+            padding-left: 20px;
+            padding-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-gold);
+            left: -7px;
+            top: 0;
+            border-radius: 50%;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            .hero-section { text-align: center; }
+            .profile-img-container { margin: 0 auto 30px; width: 200px; height: 200px; }
+            .display-1 { font-size: 3rem; }
+        }
+
+        
     </style>
 </head>
 <body>
-    <div class="container  "style=" ">
-        <div class="home shadow px-5 rounded ">
-            <div class="top text-white d-flex gap-3 flex-wrap align-items-center w-100  shadow-lg p-3 pt-5" style="height:fit-content" data-aos="fade-in">
-                <div class="pp  d-flex align-items-center shadow-light  justify-content-center"style="width:30%!important; min-width: 300px ; box-shadow: 0 0 25px rgba(255, 255, 255, 0.6)!important;">
-                    <img src="Images/44.jpg" alt="" >
-                     <!-- <img src="file/p2.png" alt=""> -->
-                </div>
-                <div class="top-text   flex-grow-1 gap-5  "  >
-                    <div class="heading name" style="font-size: 76px; line-height: 0.7;">Nitesh Poudel</div>
-                        <div class="pt-3">
-                            <span class="auto-type "></span>
-                        </div>
-                    <div class="d-flex align-items-center justify-content-betewwn  "style="width:100%!important;" >
-                            <!-- <div></div>     -->
-                            <!-- <div class="top2 d-flex flex-wrap justify-content-between  gap-5 ">
-                                <a href="mailto:ntspoudel@gmail.com">✉️:ntspoudel@gmail.com</a>
-                                <a href="https://www.linkedin.com/in/nites-poudel-162837251/">LinkedIn</a>
-                                <a href="https://github.com/Nitesh-Poudel">Github</a>
-                            </div> -->
-                            <!-- <a href="#"><div class="cv ">Download_C.v</a> -->
-                        </div>
-                </div>
-                <nav class="  position-absolute " style="bottom: 0; right:0">
-                    <div class="d-flex w-100 justify-content-around gap-3 ">
-                        <a href="#home" class="text-white py-2">Home</a>
-                        <a href="#skills" class="text-white py-2">Skills</a>
-                        <a href="#academics" class="text-white py-2">Academics</a>
-                        <a href="#gallery" class="text-white py-2">Gallery</a>
-                        <a href="#contact" class="text-white py-2">Contact</a>
-                    </div>
-                    
-                </nav>
-            </div>
-        </div>
 
-
-        <div class="shadow rounded mt-2 ">
-            <div class="py-5 col-lg-9 m-auto toolAndlanguage ">
-                <h1 class="text-white text-center" style="color: gold !important;">Who Am I?</h1><br>
-                <p class="text-white text-center">I am a Web Developer passionate about building scalable and user-friendly web applications. With experience in Laravel, Vue.js, and API development, I specialize in creating dynamic and efficient web solutions. Constantly learning and improving, I strive to develop high-performance applications that solve real-world problems.</p>
-                <div class="d-flex justify-content-center" style="cursor: pointer;">
-                    <span class="border rounded p-3 text-center fs-3 text-white shadow  ">
-                        Let’s build something amazing together! 🚀
-                    </span>
-                </div>
-                <!-- Inside footer -->
-                <div class="col-md-12 text-center mt-3">
-                    <p class="text-success fw-bold" style="color: gold!important;">📬 Open to freelance & remote opportunities</p>
-                </div>     
-            </div>
-       </div>
-
-
-
-       <section class="py-5 shadow text-white " id="skills"  data-aos="fade-in">
+    <nav class="navbar navbar-expand-lg custom-nav fixed-top">
         <div class="container">
-          <div class="text-center mb-5">
-            <h2 class="display-5 ">What I Can Do?</h2>
-            <p class="text-muted">These are the areas where I excel professionally.</p>
-          </div>
-      
-          <div class="row g-4">
-            <!-- Web Development -->
-            <div class="col-md-4"  data-aos="fade-in">
-              <div class="card bg-secondary h-100 shadow-lg border-0 text-white">
-                <div class="card-body text-center">
-                    <i class="bi bi-laptop display-4 mb-3"></i>
-                  <h5 class="card-title">Web Development</h5>
-                  <p class="card-text">Create responsive, user-friendly websites using Laravel, Vue.js, HTML, and CSS.</p>
-                </div>
-              </div>
+            <a class="navbar-brand fw-bold text-white" href="#">NITESH<span style="color:var(--accent-gold)">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
             </div>
-      
-            <!-- Backend & APIs -->
-            <div class="col-md-4"  data-aos="fade-out">
-              <div class="card bg-secondary h-100 shadow-lg border-0 text-white">
-                <div class="card-body text-center">
-                  <i class="bi bi-database-check display-4 mb-3"></i>
-                  <h5 class="card-title">Backend & APIs</h5>
-                  <p class="card-text">Build secure, scalable REST APIs and manage data using Laravel and MySQL.</p>
-                </div>
-              </div>
-            </div>
-      
-            <!-- System Designing -->
-            <div class="col-md-4"  data-aos="fade-in">
-              <div class="card bg-secondary h-100 shadow-lg border-0 text-white">
-                <div class="card-body text-center">
-                  <i class="bi bi-diagram-3-fill display-4 mb-3"></i>
-                  <h5 class="card-title">System Designing</h5>
-                  <p class="card-text">Design efficient, scalable system architecture tailored to project requirements.</p>
-                </div>
-              </div>
-            </div>
-      
-            <!-- IT Training -->
-            <div class="col-md-6"  data-aos="fade-out">
-              <div class="card bg-secondary h-100 shadow-lg border-0 text-white">
-                <div class="card-body text-center">
-                  <i class="bi bi-person-video3 display-4 mb-3"></i>
-                  <h5 class="card-title">Instruction & Training</h5>
-                  <p class="card-text">Provide training on web development, Laravel, and basic IT to students and teams.</p>
-                </div>
-              </div>
-            </div>
-      
-            <!-- Project/CRM Solutions -->
-            <!-- Agile Methodology -->
-<div class="col-md-6"  data-aos="fade-in">
-    <div class="card bg-secondary h-100 shadow-lg border-0 text-white">
-      <div class="card-body text-center">
-        <i class="bi bi-clipboard-check display-4 mb-3"></i>
-        <h5 class="card-title">Agile Methodology</h5>
-        <p class="card-text">Implement agile practices to deliver software efficiently, ensuring collaboration and continuous improvement.</p>
-      </div>
-    </div>
-  </div>
-  
-          </div>
         </div>
-      </section>
-      
-      
+    </nav>
 
-       <div class="toolAndlanguage text-white mt-5" data-aos="fade-up">
-        <div class="heading" id="skills">Language and tools</div>
-        <div class="border rounded p-3 d-flex flex-wrap gap-1">
-            <div class="flex-grow-1   border rounded  p-3 d-flex flex-wrap gap-1 justify-content-around skill">
-                <div class="bg-secondary rounded">
-                    <img src="Images/icons/html-5.png" title="HTML">
+    <div class="container" id="home">
+        <section class="hero-section">
+            <div class="row align-items-center">
+                <div class="col-lg-5 order-lg-2" data-aos="zoom-in">
+                    <div class="profile-img-container">
+                        <img src="Images/44.jpg" alt="Nitesh Poudel">
+                    </div>
                 </div>
-                <div class="bg-secondary rounded">
-                    <img src="Images/icons/css-3.png" title="CSS">
+                <div class="col-lg-7 order-lg-1" data-aos="fade-right">
+                    <h1 class="display-1 fw-bold">Nitesh Poudel</h1>
+                    <h3 class="text-warning mb-4"><span class="auto-type"></span></h3>
+                    <p class="lead opacity-75 mb-5">
+                        I am a Web Developer passionate about building scalable and user-friendly applications. 
+                        With experience in Laravel, Vue.js, and API development, I specialize in dynamic solutions.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-warning px-4 py-2 fw-bold">Hire Me</a>
+                        <a href="#projects" class="btn btn-outline-light px-4 py-2">View Work</a>
+                    </div>
                 </div>
-                <div class="bg-secondary rounded">
-                    <img src="Images/icons/js-file.png" title="JS">
-                </div>
-                <div class="bg-secondary rounded">
-                    <img src="Images/icons/php2.png" title="PHP">
-                </div>
-                <div class="bg-secondary rounded flex-grow-1">
-                    <img src="Images/icons/Bootstrap.png" title="Bootstrap">
-                </div>
-                <div class="bg-secondary rounded"style="">
-                    <img src="Images/icons/git.png" title="Git">
-                </div>
-                <div class="bg-secondary rounded"style="">
-                    <img src="Images/icons/github.png" title="Github">
-                </div>
-                <div class="bg-secondary rounded"style="">
-                    <img src="Images/icons/sql.png" title="MySql">
-                </div>
-
-                <div class="bg-secondary flex-grow-1 rounded"style="">
-                    <img src="Images/icons/laravel2.jpg" title="Laravel">
-                </div>
-                <div class="bg-secondary rounded"style="">
-                    <img src="Images/icons/tailwind.jpg" title="Tailwnd css">
-                </div>
-                <div class="bg-secondary rounded"style="">
-                    <img src="Images/icons/veu.png" title="Veu Js">
-                </div>
-
-
             </div>
-            <div class="p-3  w-100 text-center d-flex justify-content-center align-items-center border rounded" style="">
-                <span class="d-block text-center">
-                    <span class="fs-4 fw-600 "style="color:gold">"Driven by curiosity, powered by self-learning"</span> <br>
-                    I’ve built real-world projects through hands-on experience.
+        </section>
+
+<!-- <section id="skills" class="py-5" data-aos="fade-up">
+    <h2 class="section-title">Languages & Tools</h2>
+    <div class="glass-card">
+        <div class="d-flex flex-column gap-3">
+            
+            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <div class="skill-badge-wrapper bg-secondary bg-opacity-25 rounded p-2 flex-grow-1 text-center">
+                    <img src="Images/icons/html-5.png" class="skill-icon-sm" title="HTML">
+                </div>
+                <div class="skill-badge-wrapper bg-secondary bg-opacity-25 rounded p-2 flex-grow-1 text-center">
+                    <img src="Images/icons/css-3.png" class="skill-icon-sm" title="CSS">
+                </div>
+                <div class="skill-badge-wrapper bg-secondary bg-opacity-25 rounded p-2 flex-grow-1 text-center">
+                    <img src="Images/icons/js-file.png" class="skill-icon-sm" title="JS">
+                </div>
+                <div class="skill-badge-wrapper bg-secondary bg-opacity-25 rounded p-2 flex-grow-1 text-center">
+                    <img src="Images/icons/php2.png" class="skill-icon-sm" title="PHP">
+                </div>
+                <div class="skill-badge-wrapper bg-secondary bg-opacity-25 rounded p-2 flex-grow-1 text-center">
+                    <img src="Images/icons/Bootstrap.png" class="skill-icon-sm" title="Bootstrap">
+                </div>
+                <div class="skill-badge-wrapper bg-secondary bg-opacity-25 rounded p-2 flex-grow-1 text-center">
+                    <img src="Images/icons/git.png" class="skill-icon-sm" title="Git">
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <div class="skill-badge-wrapper bg-secondary bg-opacity-25 rounded p-2 flex-grow-1 text-center">
+                    <img src="Images/icons/github.png" class="skill-icon-sm" title="Github">
+                </div>
+                <div class="skill-badge-wrapper bg-secondary bg-opacity-25 rounded p-2 flex-grow-1 text-center">
+                    <img src="Images/icons/sql.png" class="skill-icon-sm" title="MySql">
+                </div>
+                <div class="skill-badge-wrapper bg-secondary bg-opacity-25 rounded p-2 flex-grow-1 text-center" style="min-width: 120px;">
+                    <img src="Images/icons/laravel2.jpg" class="skill-icon-sm" title="Laravel">
+                </div>
+                <div class="skill-badge-wrapper bg-secondary bg-opacity-25 rounded p-2 flex-grow-1 text-center">
+                    <img src="Images/icons/tailwind.jpg" class="skill-icon-sm" title="Tailwind">
+                </div>
+                <div class="skill-badge-wrapper bg-secondary bg-opacity-25 rounded p-2 flex-grow-1 text-center">
+                    <img src="Images/icons/veu.png" class="skill-icon-sm" title="Vue JS">
+                </div>
+            </div>
+
+            <div class="mt-4 p-4 border border-secondary border-opacity-25 rounded text-center w-100">
+                <span class="d-block">
+                    <span class="fs-4 fw-bold" style="color:gold">"Driven by curiosity, powered by self-learning"</span> <br>
+                    <p class="text-muted small mb-0">I’ve built real-world projects through hands-on experience and constant iteration.</p>
                 </span>
             </div>
             
         </div>
+    </div>
+</section> -->
+<section class="py-5">
+    <!-- <h2 class="section-title">Expertise</h2> -->
     
+    <div class="row g-4 mb-4">
+        <div class="col-md-4" data-aos="fade-up">
+            <div class="glass-card text-center h-100 d-flex flex-column align-items-center">
+                <i class="bi bi-laptop display-4 text-warning mb-3"></i>
+                <h5>Web Development</h5>
+                <p class="small">Laravel, Vue.js, and modern CSS frameworks.</p>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card text-center h-100 d-flex flex-column align-items-center">
+                <i class="bi bi-database-check display-4 text-warning mb-3"></i>
+                <h5>Backend & APIs</h5>
+                <p class="small">Scalable REST APIs and MySQL management.</p>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-card text-center h-100 d-flex flex-column align-items-center">
+                <i class="bi bi-diagram-3 display-4 text-warning mb-3"></i>
+                <h5>System Architecture</h5>
+                <p class="small">Efficient and scalable system design.</p>
+            </div>
+        </div>
     </div>
 
-           <div class="text-white" id="projects">
-            <div class="project py-5" >
-                <div class="heading">Pojects 10+</div>
-                <div class="py-3">
-                    <details open data-aos="fade-up">
-                        <summary>Online Thrift Service</summary>
-                        <div class="heading">🔥 Project Overview:</div>
-                        <span>The Thrift Service Web Application is an online platform that allows users to create profiles, list their second-hand clothes, and let others browse and purchase these items. Designed to encourage sustainable fashion and easy peer-to-peer transactions, the platform is simple, fast, and user-friendly.</span>
-
-                        <div class="project-container">
-                            <div class="project-feature border">
-                          
-                                <h3 class="heading py-4">💡 Key Features:</h3>
-                                <ul class="list-none">
-                                    <li>
-                                        <strong>👤 User Profiles</strong>
-                                        <ul>
-                                            <li>Users can register and create a personal profile.</li>
-                                            <li>Profile includes name, location, bio, and profile picture.</li>
-                                            <li>Users can view their listed clothes, see sales history, and manage items.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>👗 List Clothes for Sale</strong>
-                                        <ul>
-                                            <li>Upload clothes with images, descriptions, size, condition, and price.</li>
-                                            <li>Choose category (e.g., t-shirts, jeans, jackets).</li>
-                                            <li>Mark items as available, sold, or removed.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>🔍 Browse & Search</strong>
-                                        <ul>
-                                            <li>Visitors can explore clothes by category, size, location, or keyword.</li>
-                                            <li>Filter and sort by price, newest listings, or popular items.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>🛒 Buy Items</strong>
-                                        <ul>
-                                            <li>Interested users can click on items to view full details.</li>
-                                            <li>"Buy Now" feature for initiating purchase (Cash on Delivery or contact for payment).</li>
-                                            <li>Contact seller via in-app messaging or email for transaction coordination.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>📦 Seller Dashboard</strong>
-                                        <ul>
-                                            <li>View all listed items, update or delete listings.</li>
-                                            <li>Track interested buyers and completed transactions.</li>
-                                        </ul>
-
-                                        <strong>🛠️ Technologies Used:</strong>
-                                        <ul>
-                                            <li><strong>Frontend:</strong> HTML, CSS, JavaScript – for creating responsive and interactive UI.</li>
-                                            <li><strong>Backend:</strong> PHP – handles user authentication, item listing, and buying logic.</li>
-                                            <li><strong>Database:</strong> MySQL – stores user profiles, clothing item data, and transactions.</li>
-                                        </ul>
-                                        
-                                        
-
-                                    </li>
-                                </ul>
-
-                                <div>Project Url : <a class="mx-2"href="https://github.com/Nitesh-Poudel/Thrift-Service">https://github.com/Nitesh-Poudel/Thrift-Service</a></div>
-                                
-                            </div>
-                            
-
-                            <div class=" p-4 d-flex flex-grow-1 justify-content-center border  project-ui overflow-auto" >
-                                <div>
-                                    <div class="my-2"><img src="Images/thrift2.png" alt="" clas="flex-grow-1"></div>
-                                    <div> <img src="Images/thrift1.png" alt=""></div>
-                                    <div> <img src="Images/thrift3.png" alt=""></div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </details>
-                </div>
-
-
-
-                <div class="py-3">
-                    <details open  data-aos="fade-up">
-                        <summary>Book Sharing Platform</summary>
-                        <div class="heading">🔥 Project Overview:</div>
-                        <span>This web-based Book Sharing Platform is designed to connect book enthusiasts by enabling them to list, buy, and sell books within their locality. Using geolocation-based recommendations powered by the Haversine algorithm, the system suggests books that are physically nearby, encouraging efficient delivery or easy pickup. The platform supports secure user authentication, intuitive interfaces, and personalized book suggestions, all aimed at promoting sustainable book reuse and community-driven sharing.</span>
-                    
-                        <div class="project-container">
-                            <div class="project-feature  ">
-                                    <div class="my-2"><img src="Images/book1.png" alt="" class="flex-grow-1"></div>
-                                    <div><img src="Images/book2.png" alt=""></div>
-                                    <div><img src="Images/book3.png" alt=""></div>
-                                    <div><img src="Images/book4.png" alt=""></div>
-                                
-                            </div>
-                    
-                            <div class="project-feature flex-grow-1" style="min-width:50% !important">
-                                <h3 class="heading py-4">💡 Key Features:</h3>
-                                <ul class="list-none">
-                                    <li>
-                                        <strong>👤 User Profiles</strong>
-                                        <ul>
-                                            <li>Users can register and manage a personal profile.</li>
-                                            <li>Profiles include name, location, and preferences.</li>
-                                            <li>Users can view listed books, saved recommendations, and transaction history.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>📚 List Books for Sale</strong>
-                                        <ul>
-                                            <li>Upload book details including title, author, edition, and condition.</li>
-                                            <li>Attach cover images and set price and availability.</li>
-                                            <li>Mark books as available, sold, or removed.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>📍 Geolocation Recommendations</strong>
-                                        <ul>
-                                            <li>Uses the Haversine algorithm to calculate distance between users.</li>
-                                            <li>Suggests books that are nearby for easy pickup or faster delivery.</li>
-                                            <li>Improves accessibility and reduces delivery cost/time.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>🔎 Search & Explore</strong>
-                                        <ul>
-                                            <li>Browse books by title, author, genre, or keyword.</li>
-                                            <li>Filter by proximity, price, or popularity.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>💬 Secure Communication</strong>
-                                        <ul>
-                                            <li>Contact sellers through in-app messaging or email.</li>
-                                            <li>Coordinate meetups or delivery for transactions.</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <strong>🛠️ Technologies Used:</strong>
-                                        <ul>
-                                            <li><strong>Framework:</strong> Laravel – Handles backend logic, authentication, and routing.</li>
-                                            <li><strong>Frontend:</strong> Bootstrap, HTML, CSS, JavaScript – For responsive and user-friendly design.</li>
-                                            <li><strong>Geolocation:</strong> Haversine Algorithm – Used for distance-based book recommendations.</li>
-                                            <li><strong>Database:</strong> MySQL – Stores user data, book listings, and transactions.</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                    
-                                <div>Project Url: <a class="mx-2" href="https://github.com/Nitesh-Poudel/Book-Sharing-Platform">https://github.com/Nitesh-Poudel/Book-Sharing-Platform</a></div>
-                                <div>Project Documentation: <a href="file/p-report.pdf">Documentation</a></div>
-                            </div>
-                        </div>
-                    </details>
-                    
-                </div>
-
-
-                <div>
-                    <details open>
-                        <summary>Other Projects</summary>
-                        <div class="border  rounded p-1 d-flex flex-wrap gap-1">
-                           
-                            <div class="bg-secondary rounded p-3">Blogsite</div>
-                            <div class="bg-secondary rounded p-3">News Portal</div>
-                            <div class="bg-secondary rounded p-3">Wether Application</div>
-                            <div class="bg-secondary rounded p-3">Todo Application</div>
-                            <div class="bg-secondary rounded p-3">Others</div>
-                        </div>
-
-                       <div>
-                        Currently Working on
-                       <div class="d-flex bg-secondary rounded p-3 align-items-center justify-content-between">
-                        <div class="bg-secondary rounded p-3">EIMS (Education Information Management System)</div>
-                        <a href="mailto:your@email.com" class="text-warning fw-bold text-decoration-none">Interested?</a>
-                       </div>
-                       </div>
-                    </details>
-                </div>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-6" data-aos="fade-up">
+            <div class="glass-card text-center h-100 d-flex flex-column align-items-center">
+                <i class="bi bi-person-video3 display-4 text-warning mb-3"></i>
+                <h5>Instruction & Training</h5>
+                <p class="small">Provide training on web development, Laravel, and basic IT to students and teams.</p>
             </div>
-           </div>
+        </div>
+        
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass-card text-center h-100 d-flex flex-column align-items-center">
+                <i class="bi bi-clipboard-check display-4 text-warning mb-3"></i>
+                <h5>Agile Methodology</h5>
+                <p class="small">Implement agile practices to deliver software efficiently, ensuring collaboration and continuous improvement.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-           <!-- <div>
-                <div class="heading">Experience</div>
-           </div> -->
-
-            <!-- <div class="intrestss">
-                <div class="heading">Domain of intrest</div>
-                <div class="intrest d-flex justify-content-between">
-                    <div class="intrest border rounded shadow text-white py-1 px-3">Web Development</div>
-                    <div class="intrest border rounded shadow text-white py-1 px-3">Application Development</div>
-                    <div class="intrest border rounded shadow text-white py-1 px-3">Machine Learning</div>
-                    <div class="intrest border rounded shadow text-white py-1 px-3">Blockchain</div>
+        <section id="projects" class="py-5">
+            <h2 class="fw-bold mb-4">Featured Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="glass-card overflow-hidden h-100">
+                        <img src="Images/thrift2.png" class="w-100 object-fit-cover" style="height:250px;" alt="Project">
+                        <div class="p-4">
+                            <h4 class="text-warning">Online Thrift Service</h4>
+                            <p class="opacity-75">Sustainable fashion platform for peer-to-peer clothing transactions.</p>
+                            <a href="https://github.com/Nitesh-Poudel/Thrift-Service" class="btn btn-sm btn-outline-warning">View Detail</a>
+                        </div>
+                    </div>
                 </div>
-
-            </div> -->
-
-           
-
-
-            <!-- <div class="academics pt-5 text-white" id="academics"> -->
-                <!-- <div class="heading mb-4 fs-3 fw-bold">🎓 My Journey</div> -->
-                <!-- <span>How we lean on University</span>
-                <div class="p-5 border"> -->
-                
-                <!-- </div> -->
-                <!-- <div class="academic d-flex justify-content-center">
-                    <table class="table table-bordered table-hover text-center w-100 shadow-lg rounded" style="background-color: #f8f9fa;">
-                        <thead class="table-dark">
-                            <tr>
-                                <th>Level</th>
-                                <th>Institution</th>
-                                <th>Completed Year</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>SEE</td>
-                                <td>Arunodaya Secondary School</td>
-                                <td>2074 Bs </td>
-                                
-                            </tr>
-                            <tr>
-                                <td>10+2</td>
-                                <td>Arunodaya Secondary School</td>
-                                <td>2076 Bs</td>
-                            </tr>
-                            <tr>
-                                <td>BCA</td>
-                                <td>Tribhuwan University</td>
-                                <td>Running</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div> -->
-            <!-- </div> -->
-
-
-
-          <div class="timeline-section rounded">
-            <div class="container">
-                <div class="heading mb-4 fs-3 fw-bold">My Journey</div>
-                
-                <div class="timeline-container">
-                    <div class="timeline-path ">
-                        <!-- SEE -->
-                        <div class="timeline-item">
-                            <div class="timeline-card">
-                                <div class="icon d-flex align-items-center justify-content-between">
-                                    <div class="timeline-title">SEE</div>
-                                    <div class="timeline-year">2017</div>
-                                </div>
-                                
-                                <div class="timeline-subtitle">Arunodaya School</div>
-                                <div class="timeline-description">Completed SEE examination</div>
-                                <div class="timeline-tags">
-                                    <span class="timeline-tag">Education</span>
-                                </div>
-                            </div>
-                            <div class="timeline-dot"></div>
-                        </div>
-
-                        <!-- +2 -->
-                        <div class="timeline-item">
-                            <div class="timeline-card">
-                                <div class="icon d-flex align-items-center justify-content-between">
-                                     <div class="timeline-title">10+2</div>
-                                    <div class="timeline-year">2019</div>
-                                </div>
-                                <div class="timeline-subtitle">Arunodaya School</div>
-                                <div class="timeline-description">Higher secondary education completed</div>
-                                <div class="timeline-tags">
-                                    <span class="timeline-tag">Education</span>
-                                </div>
-                            </div>
-                            <div class="timeline-dot"></div>
-                        </div>
-
-                        <!-- BCA -->
-                        <div class="timeline-item">
-                            <div class="timeline-card">
-                                <div class="icon d-flex align-items-center justify-content-between">
-                                    <div class="timeline-title">BCA Started</div>
-                                    <div class="timeline-year">2020</div>
-                                </div>
-                                <div class="timeline-subtitle">Tribhuvan University</div>
-                                <div class="timeline-description">Bachelor program in progress</div>
-                                <div class="timeline-tags">
-                                    <span class="timeline-tag">Ongoing</span>
-                                </div>
-                            </div>
-                            <div class="timeline-dot"></div>
-                        </div>
-
-                        <!-- Joogle -->
-                        <div class="timeline-item">
-                            <div class="timeline-card">
-                                <div class="icon d-flex align-items-center justify-content-between">
-                                    <div class="timeline-title">Laravel Intern</div>
-                                    <div class="timeline-year">2024</div>
-                                </div>
-                                <div class="timeline-subtitle">Joogle Technology</div>
-                                <div class="timeline-description">First internship experience</div>
-                                <div class="timeline-tags">
-                                    <span class="timeline-tag">Laravel</span>
-                                    <span class="timeline-tag">Blade</span>
-                                </div>
-                            </div>
-                            <div class="timeline-dot"></div>
-                        </div>
-
-                        <!-- Smart Sewa -->
-                        <div class="timeline-item">
-                            <div class="timeline-card">
-                                <div class="icon d-flex align-items-center justify-content-between">
-                                    <div class="timeline-title">Frontend Dev</div>
-                                    <div class="timeline-year">2024</div>
-                                </div>
-                                <div class="timeline-subtitle">Smart Sewa</div>
-                                <div class="timeline-description">UI/UX development role</div>
-                                <div class="timeline-tags">
-                                    <span class="timeline-tag">Frontend</span>
-                                </div>
-                            </div>
-                            <div class="timeline-dot"></div>
-                        </div>
-
-                        <!-- Ambition Guru -->
-                        <div class="timeline-item">
-                            <div class="timeline-card">
-                                <div class="icon d-flex align-items-center justify-content-between">
-                                    <div class="timeline-title">Full Stack Dev</div>
-                                    <div class="timeline-year">2025</div>
-                                </div>
-                                <div class="timeline-subtitle">Ambition Guru</div>
-                                <div class="timeline-description">Current position</div>
-                                <div class="timeline-tags">
-                                    <span class="timeline-tag">Full Stack</span>
-                                    <span class="timeline-tag">Present</span>
-                                </div>
-                            </div>
-                            <div class="timeline-dot"></div>
+                <div class="col-md-6" data-aos="fade-up" data-offset="100">
+                    <div class="glass-card overflow-hidden h-100">
+                        <img src="Images/book1.png" class="w-100 object-fit-cover" style="height:250px;" alt="Project">
+                        <div class="p-4">
+                            <h4 class="text-warning">Book Sharing Platform</h4>
+                            <p class="opacity-75">Geolocated book trading app using the Haversine algorithm.</p>
+                            <a href="https://github.com/Nitesh-Poudel/Book-Sharing-Platform" class="btn btn-sm btn-outline-warning">View Detail</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-            
-            
-        </div>
+        <section class="py-5">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="fw-bold mb-5">Experience</h2>
+                    <div class="timeline-item">
+                        <h5>Full Stack Dev @ Ambition Guru</h5>
+                        <small class="text-warning">2025 - Present</small>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>Frontend Dev @ Smart Sewa</h5>
+                        <small class="text-warning">2024</small>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>Laravel Intern @ Joogle Technology</h5>
+                        <small class="text-warning">2024</small>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <h2 class="fw-bold mb-5">Education</h2>
+                    <div class="timeline-item">
+                        <h5>BCA (Bachelor in Computer Application)</h5>
+                        <small class="text-warning">Tribhuvan University (Ongoing)</small>
+                    </div>
+                    <div class="timeline-item">
+                        <h5>10+2 Secondary Education</h5>
+                        <small class="text-warning">Arunodaya School | 2019</small>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    </div>
-
-    <section id="gallery" class="container mt-5">
-        <h2 class="text-start text-light mb-4 heading fw-bold fs-3">🖼️ My Gallery</h2>
+           <section id="gallery" class="py-5">
+        <h2 class="fw-bold mb-4">My Gallery</h2>
         <div class="row">
             <!-- Gallery Item 1 -->
             <div class="col-md-4  row-md-6 mb-4 rounded shadow  position-relative overflow-hidden">
@@ -574,9 +351,6 @@
                     </div>
                 </div>
             </div>
-            
-    
-            <!-- Gallery Item 3 -->
             <div class="col-md-4 mb-4 hobby position-relative overflow-hidden">
                 <div class="d-flex flex-wrap w-100 h-100">
                     <!-- Image 1 -->
@@ -604,11 +378,6 @@
                     <p class="m-0 fw-700">Activities I'm passionate about</p>
                 </div>
             </div>
-
-
-            
-
-         
             <div class="col-md-4  row-md-6 mb-4 rounded shadow  position-relative overflow-hidden">
                 <div class="gallery-item">
                     <img src="file/gallery/home.jpg" alt="Gallery Image 1" class="img-fluid pt-1 rounded blur-1">
@@ -616,86 +385,68 @@
                         <p>This is where my journey began.</p>
                     </div>
                 </div>
+            </div>           
             </div>
-            
-
-  
-           
-            
-            
-            </div>
-           
-            <!-- Add more gallery items as needed -->
         </div>
     </section>
-    
+    </div>
 
+
+ 
     
-    <footer class="text-white bg-dark mt-5 pt-4 pb-2 shadow-lg">
-        
-        <div class="container d-fle">
-            
-            <div class="row text-center text-md-start d-flex">
-                <!-- Contact Info -->
-                <div class="col-md-4 mb-4">
-                    <h5 class="text-uppercase fw-bold" id="contact">Contact</h5>
-                    <p><i class="bi bi-envelope-fill me-2"></i> ntspoudel@gmail.com</p>
-                    <p><i class="bi bi-geo-alt-fill me-2"></i> Kathmandu, Nepal</p>
-                    <p><i class="bi bi-phone-fill me-2"></i> +977-9800000000</p>
-                </div>
-    
-                <!-- Quick Links -->
-                <div class="col-md-4 mb-4">
-                    <h5 class="text-uppercase fw-bold">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#projects" class="text-white text-decoration-none"><i class="bi bi-arrow-right-short"></i> Projects</a></li>
-                        <li><a href="#about" class="text-white text-decoration-none"><i class="bi bi-arrow-right-short"></i> About Me</a></li>
-                        <li><a href="#skills" class="text-white text-decoration-none"><i class="bi bi-arrow-right-short"></i> Skills</a></li>
-                        <a href="#" class="text-white text-decoration-none pt-5"><i class="bi bi-arrow-up-circle-fill"></i> Back to Top</a>
-                    </ul>
-                </div>
-    
-                <!-- Social Links -->
-                <div class="col-md-4 mb-4">
-                    <h5 class="text-uppercase fw-bold">Follow Me</h5>
-                    <a href="https://www.linkedin.com/in/nites-poudel-162837251/" class="text-white fs-4 me-3"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Nitesh-Poudel" class="text-white fs-4 me-3"><i class="fab fa-github"></i></a>
-                    <a href="mailto:ntspoudel@gmail.com" class="text-white fs-4 me-3"><i class="fas fa-envelope"></i></a><br>
-                    
-                   
-                </div>
-                <!-- Inside footer -->
-                <div class="col-md-12 text-center mt-3">
-                    <p class="text-success fw-bold">📬 Open to freelance & remote opportunities</p>
-                </div>
-  
+<footer id="contact" class="py-5 mt-5 glass-card rounded-0 border-0 border-top">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <div class="col-md-4 mb-4">
+                <h5 class="text-uppercase fw-bold text-warning mb-4" style="letter-spacing: 1px;">Contact</h5>
+                <p class="opacity-75 mb-2"><i class="bi bi-envelope-fill text-warning me-2"></i> ntspoudel@gmail.com</p>
+                <p class="opacity-75 mb-2"><i class="bi bi-geo-alt-fill text-warning me-2"></i> Kathmandu, Nepal</p>
+                <p class="opacity-75 mb-2"><i class="bi bi-phone-fill text-warning me-2"></i> +977-9800000000</p>
             </div>
-    
-            <!-- Copyright -->
-            <div class="text-center border-top pt-3 mt-3">
-                <small>© 2025 Nitesh Poudel. All rights reserved.</small>
+
+            <div class="col-md-4 mb-4">
+                <h5 class="text-uppercase fw-bold text-warning mb-4" style="letter-spacing: 1px;">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#projects" class="text-white text-decoration-none opacity-75 nav-link-custom"><i class="bi bi-chevron-right text-warning small me-2"></i>Projects</a></li>
+                    <li class="mb-2"><a href="#about" class="text-white text-decoration-none opacity-75 nav-link-custom"><i class="bi bi-chevron-right text-warning small me-2"></i>About Me</a></li>
+                    <li class="mb-2"><a href="#skills" class="text-white text-decoration-none opacity-75 nav-link-custom"><i class="bi bi-chevron-right text-warning small me-2"></i>Skills</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <h5 class="text-uppercase fw-bold text-warning mb-4" style="letter-spacing: 1px;">Follow Me</h5>
+                <div class="d-flex justify-content-center justify-content-md-start gap-4">
+                    <a href="https://www.linkedin.com/in/nites-poudel-162837251/" class="text-white fs-3 social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Nitesh-Poudel" class="text-white fs-3 social-icon"><i class="fab fa-github"></i></a>
+                    <a href="mailto:ntspoudel@gmail.com" class="text-white fs-3 social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+                <div class="mt-4">
+                     <a href="#" class="text-warning text-decoration-none small fw-bold"><i class="bi bi-arrow-up-circle-fill me-2"></i>BACK TO TOP</a>
+                </div>
+            </div>
+
+            <div class="col-md-12 text-center mt-4 pt-3 border-top border-secondary">
+                <p class="text-success fw-bold m-0" style="color: #10b981 !important;">📬 Open to freelance & remote opportunities</p>
+                <small class="opacity-50 d-block mt-2">© 2026 Nitesh Poudel. All rights reserved.</small>
             </div>
         </div>
-    </footer>
-    
-    
+    </div>
+</footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Typing Effect
         var typed = new Typed(".auto-type",{
-            strings : ["","A Passionate Developer & Lifelong Learner", "Focused on Creating Meaningful Solutions", "Constantly Evolving in Technology and Growth"],
-            typeSpeed : 55,
-            backSpeed : 15,
+            strings : ["Fullstack Developer", "Laravel Expert", "Vue.js Enthusiast", "System Designer"],
+            typeSpeed : 60,
+            backSpeed : 30,
             loop : true
-        });     
+        });
+
+        // Scroll Animations
+        AOS.init({ duration: 1000, once: true });
     </script>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000, // animation duration
-    once: true      // animation happens only once when scrolled into view
-  });
-</script>
-
 </body>
 </html>
